@@ -1,0 +1,80 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "HTTP Request Rate (req/s)",
+      "targets": [
+        {
+          "expr": "rate(http_requests_total[1m])",
+          "legendFormat": "Requests per second",
+          "refId": "A"
+        }
+      ],
+      "datasource": { "type": "prometheus", "uid": "bf2j62etko3k0b" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "CPU Usage (seconds)",
+      "targets": [
+        {
+          "expr": "process_cpu_seconds_total",
+          "legendFormat": "CPU seconds",
+          "refId": "B"
+        }
+      ],
+      "datasource": { "type": "prometheus", "uid": "bf2j62etko3k0b" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 }
+    },
+    {
+      "type": "timeseries",
+      "title": "Memory Usage (bytes)",
+      "targets": [
+        {
+          "expr": "process_resident_memory_bytes",
+          "legendFormat": "Resident memory",
+          "refId": "C"
+        }
+      ],
+      "datasource": { "type": "prometheus", "uid": "bf2j62etko3k0b" },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 }
+    },
+    {
+      "type": "timeseries",
+      "title": "Event Loop Lag (seconds)",
+      "targets": [
+        {
+          "expr": "nodejs_eventloop_lag_seconds",
+          "legendFormat": "Lag",
+          "refId": "D"
+        }
+      ],
+      "datasource": { "type": "prometheus", "uid": "bf2j62etko3k0b" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 }
+    },
+    {
+      "type": "timeseries",
+      "title": "Active Handles",
+      "targets": [
+        {
+          "expr": "nodejs_active_handles_total",
+          "legendFormat": "Handles",
+          "refId": "E"
+        }
+      ],
+      "datasource": { "type": "prometheus", "uid": "bf2j62etko3k0b" },
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 16 }
+    }
+  ],
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": ["nodejs", "prometheus"],
+  "timezone": "",
+  "title": "Node.js Metrics Dashboard",
+  "uid": "nodejs-dashboard",
+  "version": 1
+}
